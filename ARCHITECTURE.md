@@ -24,3 +24,34 @@ This system is a single-page application (SPA) with a REST backend and managed a
 
 ## Architecture Diagram
 ![System Architecture](images/architecture_diagram.png)
+
+## Component Responsibilities
+### Frontend
+- UI rendering and routing
+- User authentication via Supabase SDK
+- Client-side validation
+- Sends JWT in Authorization header to backend
+
+### Backend
+- REST API
+- Token validation
+- Authorization and ownership checks
+- Business logic and transactions
+- Database access via Hibernate
+
+### Supabase
+- Supabase Auth manages user identity
+- Supabase Postgres stores application data
+
+## Architectural Style
+- Modular monolith backend
+- Layered architecture:
+  - Controller
+  - Service
+  - Repository
+  - Domain
+
+## Trust Boundaries
+- Browser is untrusted
+- Backend is the security enforcement point
+- Database is accessed only by backend
