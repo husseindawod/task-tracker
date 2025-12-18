@@ -23,3 +23,4 @@ This system is a single-page application (SPA) with a REST backend and managed a
 - Docker provides local runtime parity and repeatable developer environments
 
 ## Architecture Diagram
+![System Architecture](images/architecture_diagram.png)
