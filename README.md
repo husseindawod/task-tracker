@@ -5,15 +5,17 @@ A full-stack task tracker application built as a realistic, deployable portfolio
 ## Tech Stack
 - Frontend: React + TypeScript + Tailwind CSS
 - Backend: Spring Boot + Hibernate (modular monolith)
-- Authentication: Supabase Auth
+- Authentication: Supabase Auth (email/password + email confirmation)
 - Database: Supabase Postgres
 - Hosting:
   - Frontend: Cloudflare Pages
-  - Backend: Render (Web Service)
-- Local dev & parity: Docker (recommended) + optional Docker Compose
+  - Backend: Render (Docker Web Service)
+- Containerization:
+  - Development: Docker (recommended) + optional Docker Compose
+  - Production (backend): Docker (Render runs the container)
 
 ## MVP v1 Features
-- Email/password authentication (Supabase Auth)
+- Email/password authentication with mandatory email confirmation (Supabase Auth)
 - Create, read, update, and soft-delete tasks
 - Task status, priority, and due dates
 - Project-based task grouping
@@ -22,10 +24,10 @@ A full-stack task tracker application built as a realistic, deployable portfolio
 - Fully deployed frontend, backend, and database
 
 ## Docker (how it fits)
-Docker is used to make local development reproducible and production-like:
-- Run backend in a container locally to match Render runtime assumptions
-- Optionally run a local Postgres container for offline dev (Supabase remains the source of truth for deployed v1)
-- Standardize environment variables and startup behavior across machines
+Docker is a first-class part of this MVP:
+- The backend is packaged as a container image.
+- The same container image format is used in both local development and production on Render.
+- Environment-specific configuration is injected via environment variables (never baked into images).
 
 ## Documentation
 - Architecture: `ARCHITECTURE.md`
