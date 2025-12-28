@@ -37,6 +37,16 @@ This system is a single-page application (SPA) with a REST backend, plus managed
   - locally (Docker)
   - in production (Render Docker Web Service)
 
+### Database Migrations
+
+The backend manages database schema using **Flyway SQL migrations**.
+
+- Migration files live in `src/main/resources/db/migration/`.
+- Migrations are versioned and applied automatically on startup.
+- Hibernate DDL auto-generation is disabled (`ddl-auto=validate`); Flyway is the single source of truth for schema creation and evolution.
+- The database connection is configured using environment variables (DB host, name, user, password).
+
+
 ### Supabase
 - Supabase Auth manages user identity, issues JWTs, and enforces email confirmation requirements
 - Supabase Postgres stores application data

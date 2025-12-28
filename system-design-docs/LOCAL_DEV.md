@@ -41,3 +41,6 @@ Compose can be used to orchestrate local services:
 - No AWS-like stack locally
 - No Kubernetes
 - No complex networking setup
+
+### Database and Migrations
+On local startup, the backend connects to the configured PostgreSQL instance (Supabase) using environment variables (`DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASSWORD`). Flyway automatically applies any pending migrations. Developers must not modify the database schema manually; all changes must be made through new Flyway migration files.

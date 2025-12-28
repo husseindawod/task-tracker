@@ -44,3 +44,6 @@ The system must ensure unconfirmed users cannot use the application:
 - Security behavior (token validation, email-confirmation enforcement, CORS enforcement, error shape) must match:
   - local container runs
   - Render container runs
+
+### Secrets and Credentials
+Database credentials are supplied via environment variables and are never committed to the repository. The application relies on Flyway migrations for schema management; direct manual modification of the database schema is not permitted in any environment.

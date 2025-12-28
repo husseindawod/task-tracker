@@ -23,6 +23,18 @@ Environment variables (conceptual):
 - Token verification configuration (depending on chosen approach)
 - CORS_ALLOWED_ORIGINS (Cloudflare Pages domain; include localhost only for dev environments)
 
+### Backend Environment Variables
+The backend receives database configuration via environment variables:
+
+- DB_HOST
+- DB_PORT
+- DB_NAME
+- DB_USER
+- DB_PASSWORD
+
+These values are injected by the hosting platform and are not stored in the repository. On startup, Flyway runs automatically and applies any pending schema migrations before the service becomes available.
+
+
 ## Supabase (Auth + Postgres)
 ### Authentication settings (required for v1)
 - Enable email/password authentication.

@@ -43,3 +43,7 @@ The Supabase user ID (JWT `sub`) is used as `owner_id`.
 
 ## Entity Relationship Diagram
 ![Entity Relationship Diagram](../system-design-images/entity-relationship-diagram.png)
+
+### Schema Ownership
+
+The physical schema for `projects` and `tasks` is created and evolved exclusively via **Flyway migrations**. The initial schema is defined in `V1__init.sql`. Any future schema changes must be introduced using new migration files rather than manual database edits.
